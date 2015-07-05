@@ -1,0 +1,25 @@
+{
+    "name":         "octris/readline",
+    "type":         "library",
+    "description":  "Provides readline functionality either by using built-in readline capabilities or by an emulation, if built-in functionality is not available.",
+    "keywords":     [],
+    "homepage":     "http://github.com/octris/process/",
+    "license":      "BSD-3-Clause",
+
+    "authors":      [{
+        "name":         "Harald Lapp",
+        "email":        "harald@octris.org",
+        "homepage":     "http://www.octris.org/"
+    }],
+
+    "require":      {
+        "php":          ">=5.6.0"
+    },
+
+    "autoload":     {
+        "classmap": [ "libs/Readline.php" ],
+        "psr-4":        {
+            "Octris\\Readline\\": "libs/Readline/"
+        }
+    }
+}
