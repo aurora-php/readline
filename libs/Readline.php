@@ -92,6 +92,32 @@ class Readline
         return self::$instances[$history_file];
     }
 
+    /**
+     * Get user input from STDIN.
+     *
+     * @param   string      $prompt     Optional prompt to print.
+     * @param   string      $default    Optional default value.
+     * @param   bool        $force      Optional flag to indicate whether to
+     *                                  force input.
+     * @return  string                  User input.
+     */
+    public static function getPrompt($prompt = '', $default = '', $force = false)
+    {
+        $readline = static::getInstance();
+
+        $return   = false;
+        $iterator = 3;
+
+        do {
+            $return = $readline->readline(sprintf($prompt, $default));
+
+            $return = ($return == '' ? $default : trim($return));
+            --$iterator;
+        } while ($force && $return == '' && $iterator > 0);
+
+        return $return;
+    }
+
     /** no need to ever create an instance of this class **/
     protected function __construct()
     {
