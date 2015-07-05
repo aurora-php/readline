@@ -17,7 +17,7 @@
     },
 
     "autoload":     {
-        "classmap": [ "libs/Readline.php" ],
+        "classmap": [ "libs/Readline.php", "libs/IReadline.php" ],
         "psr-4":        {
             "Octris\\Readline\\": "libs/Readline/"
         }
